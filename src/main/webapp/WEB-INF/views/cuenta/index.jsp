@@ -9,29 +9,35 @@
 <link type="text/css" href="/css/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
-	<h2>List of Gastos</h2>
+	<h2>List of Cuentas</h2>
 	<table class="table table-bordered">
 		<tr>
+			<th>Persona</th>
 			<th>Concepto</th>
 			<th>Cantidad</th>
-			<th>Frecuencia</th>
-			<th>Diario</th>
+			<th>Pagado</th>
+			<th>Num Pago</th>
+			<th>Total Pagos</th>
+			<th>Observacion</th>
 		</tr>
 		<tbody>
-			<c:forEach items="${gastos}" var="gasto" varStatus="itr">
+			<c:forEach items="${cuentas}" var="cuenta" varStatus="itr">
 				<tr>
-					<td>${gasto.concepto}</td>
-					<td>${gasto.cantidad}</td>
-					<td>${gasto.frecuencia}</td>
-					<td>${gasto.diario?"Si":"NO"}</td>
-					<td><a href="/gasto/edit/${gasto.id}"
+					<td>${cuenta.persona}</td>
+					<td>${cuenta.concepto}</td>
+					<td>${cuenta.cantidad}</td>
+					<td>${cuenta.pagado}</td>
+					<td>${cuenta.numeroPago}</td>
+					<td>${cuenta.totalPagos}</td>
+					<td>${cuenta.observacion}</td>
+					<td><a href="/cuenta/edit/${cuenta.id}"
 						class="btn btn-warning">Edit</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
 
 	</table>
-	<a href="/gasto/create" class="btn btn-success">Add Gasto</a>
+	<a href="/cuenta/create" class="btn btn-success">Add Cuenta</a>
 
 	<script type="application/javascript" src="js/jquery.js"></script>
 	<script type="application/javascript" src="js/bootstrap.js"></script>

@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.reno.blue.cuentas.mgmt.model.Gasto;
 import com.reno.blue.cuentas.mgmt.service.GastoService;
-//
+
 @Controller
-@RequestMapping(value = { "", "/gasto" })
+@RequestMapping(value = {"/gasto" })
 public class GastoController {
 
 	@Autowired
 	private GastoService gastoService;
 
-	@RequestMapping(value = { "/", "index" })
+	@RequestMapping(value = { "lista" })
 	public String index(Model model) {
 		System.out.println(gastoService.findAll());
 		model.addAttribute("gastos", gastoService.findAll());
@@ -32,7 +32,7 @@ public class GastoController {
 	@RequestMapping(value = "save", method = RequestMethod.POST)
 	public String save(Gasto gasto) {
 		gastoService.save(gasto);
-		return "redirect:index";
+		return "redirect:lista";
 	}
 
 	@RequestMapping(value = "edit/{id}")
@@ -44,12 +44,12 @@ public class GastoController {
 	@RequestMapping(value = "update", method = RequestMethod.POST)
 	public String update(Gasto gasto) {
 		gastoService.save(gasto);
-		return "redirect:index";
+		return "redirect:lista";
 	}
 
-	@RequestMapping(value = "/test")
-	public String test() {
-		return " hello world";
-	}
+//	@RequestMapping(value = "/test")
+//	public String test() {
+//		return " hello world";
+//	}
 
 }

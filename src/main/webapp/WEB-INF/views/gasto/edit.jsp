@@ -15,24 +15,26 @@
 		<table class="table table-bordered">
 			<tbody>
 				<tr>
-					<th>Name</th>
-					<td><input type="text" name="name" required="required"
-						value="${gasto.name}"></td>
+					<th>Concepto</th>
+					<td><input type="text" name="concepto" required="required"
+						value="${gasto.concepto}"></td>
 				</tr>
 				<tr>
-					<th>Email</th>
-					<td><input type="email" name="email" required="required"
-						value="${gasto.email}"></td>
+					<th>Cantidad</th>
+					<td><input type="number" name="cantidad" required="required"
+						value="${gasto.cantidad}"></td>
 				</tr>
 				<tr>
-					<th>Password</th>
-					<td><input type="password" name="password" required="required"
-						value="${gasto.password}"></td>
+					<th>Frecuencia</th>
+					<td><input type="number" name="frecuencia" required="required"
+						value="${gasto.frecuencia}"></td>
 				</tr>
 				<tr>
-					<th>Mobile</th>
-					<td><input type="number" name="mobile" required="required"
-						value="${gasto.mobile}"></td>
+					<th>Diario</th>
+					<td><select name="diario" ${gasto.diario}>
+							<option value=${gasto.diario}>${gasto.diario?'SI':'NO'}</option>
+							<option value=${!gasto.diario}>${!gasto.diario?'SI':'NO'}</option>
+					</select></td>
 				</tr>
 				<tr>
 					<td colspan="2"><input type="submit" value="Edit Gasto"

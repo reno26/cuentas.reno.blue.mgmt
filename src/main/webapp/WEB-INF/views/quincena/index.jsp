@@ -9,33 +9,27 @@
 <link type="text/css" href="/css/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
-	<h2>List of Gastos</h2>
+	<h2>List of Quincenas</h2>
 	<table class="table table-bordered">
 		<tr>
-			<th>Concepto</th>
-			<th>Cantidad</th>
-			<th>Frecuencia</th>
-			<th>Diario</th>
+			<th>Periodo</th>
+			<th>Anio</th>
 		</tr>
 		<tbody>
-			<c:forEach items="${gastos}" var="gasto" varStatus="itr">
+			<c:forEach items="${quincenas}" var="quincena" varStatus="itr">
 				<tr>
-					<td>${gasto.concepto}</td>
-					<td>${gasto.cantidad}</td>
-					<td>${gasto.frecuencia}</td>
-					<td>${gasto.diario?"Si":"NO"}</td>
-					<td><a href="/gasto/edit/${gasto.id}"
+					<td>${quincena.periodo}</td>
+					<td>${quincena.anio}</td>
+					<td><a href="/quincena/edit/${quincena.id}"
 						class="btn btn-warning">Edit</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
 
 	</table>
-	<a href="/gasto/create" class="btn btn-success">Add Gasto</a>
-
+	<a href="/quincena/create" class="btn btn-success">Add Quincena</a>
 	<script type="application/javascript" src="js/jquery.js"></script>
 	<script type="application/javascript" src="js/bootstrap.js"></script>
-
 
 </body>
 </html>

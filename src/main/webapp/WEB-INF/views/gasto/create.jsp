@@ -14,20 +14,23 @@
 		<table class="table table-bordered">
 			<tbody>
 				<tr>
-					<th>Name</th>
-					<td><input type="text" name="name" required="required"></td>
+					<th>Concepto</th>
+					<td><input type="text" name="concepto" required="required"></td>
 				</tr>
 				<tr>
-					<th>Email</th>
-					<td><input type="email" name="email" required="required"></td>
+					<th>Cantidad</th>
+					<td><input type="number" name="cantidad" required="required"></td>
 				</tr>
 				<tr>
-					<th>Password</th>
-					<td><input type="password" name="password" required="required"></td>
+					<th>Frecuencia</th>
+					<td><input type="number" name="frecuencia" required="required"></td>
 				</tr>
 				<tr>
-					<th>Mobile</th>
-					<td><input type="number" name="mobile" required="required"></td>
+					<th>Diario</th>
+					<td><select name ="diario">
+						<option value="1">Si</option>
+						<option value="0">No</option>
+					</select></td>
 				</tr>
 				<tr>
 					<td colspan="2"><input type="submit" value="Add Gasto"
@@ -36,7 +39,7 @@
 			</tbody>
 		</table>
 	</form>
-	<a href="/gasto/index" class="btn btn-success">Back</a>
+	<a href="/gasto/lista" class="btn btn-success">Back</a>
 
 	<script type="application/javascript" src="js/jquery.js"></script>
 	<script type="application/javascript" src="js/bootstrap.js"></script>
