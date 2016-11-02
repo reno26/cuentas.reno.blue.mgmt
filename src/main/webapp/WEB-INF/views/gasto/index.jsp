@@ -4,8 +4,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<style>
+.city {
+    float: left;
+    margin: 5px;
+    padding: 15px;
+    max-width: 300px;
+    height: 300px;
+    border: 1px solid black;
+} 
+</style>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Gastos</title>
 <link type="text/css" href="/css/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
@@ -23,9 +33,9 @@
 					<td>${gasto.concepto}</td>
 					<td>${gasto.cantidad}</td>
 					<td>${gasto.frecuencia}</td>
-					<td>${gasto.diario?"Si":"NO"}</td>
-					<td><a href="/gasto/edit/${gasto.id}"
-						class="btn btn-warning">Edit</a></td>
+					<td>${gasto.diario?"Si":"No"}</td>
+					<td><a href="/gasto/edit/${gasto.id}" class="btn btn-warning">Edit</a></td>
+					<td><a href="/gasto/${gasto.id}" class="btn btn-warning">Delete</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

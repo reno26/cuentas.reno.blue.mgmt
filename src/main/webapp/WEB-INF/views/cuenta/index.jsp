@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Cuentas</title>
 <link type="text/css" href="/css/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
@@ -16,9 +16,9 @@
 			<th>Concepto</th>
 			<th>Cantidad</th>
 			<th>Pagado</th>
-			<th>Num Pago</th>
+			<th>Número Pago</th>
 			<th>Total Pagos</th>
-			<th>Observacion</th>
+			<th>Observación</th>
 		</tr>
 		<tbody>
 			<c:forEach items="${cuentas}" var="cuenta" varStatus="itr">

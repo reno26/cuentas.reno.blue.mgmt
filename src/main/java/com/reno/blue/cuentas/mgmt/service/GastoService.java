@@ -24,4 +24,8 @@ public class GastoService {
 		return gastoRepository.save(gasto);
 	}
 
+	public void delete(Long id) {
+		gastoRepository.delete(id);		
+	}
+
 }

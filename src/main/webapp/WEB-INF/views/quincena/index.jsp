@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Quincenas</title>
 <link type="text/css" href="/css/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
@@ -20,8 +20,8 @@
 				<tr>
 					<td>${quincena.periodo}</td>
 					<td>${quincena.anio}</td>
-					<td><a href="/quincena/edit/${quincena.id}"
-						class="btn btn-warning">Edit</a></td>
+					<td><a href="/quincena/edit/${quincena.id}" class="btn btn-warning">Edit</a></td>
+					<td><a href="/quincena/${quincena.id}" class="btn btn-warning">Delete</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

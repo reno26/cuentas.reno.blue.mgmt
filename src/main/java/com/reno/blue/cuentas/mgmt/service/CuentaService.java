@@ -10,18 +10,22 @@ import com.reno.blue.cuentas.mgmt.repository.CuentaRepository;
 public class CuentaService {
 
 	@Autowired
-	private CuentaRepository gastoRepository;
+	private CuentaRepository cuentaRepository;
 
 	public Object findAll() {
-		return gastoRepository.findAll();
+		return cuentaRepository.findAll();
 	}
 
 	public Cuenta findById(Long id) {
-		return gastoRepository.findOne(id);
+		return cuentaRepository.findOne(id);
 	}
 
-	public Cuenta save(Cuenta gasto) {
-		return gastoRepository.save(gasto);
+	public Cuenta save(Cuenta cuenta) {
+		return cuentaRepository.save(cuenta);
+	}
+	
+	public void delete(Long id) {
+		cuentaRepository.delete(id);		
 	}
 
 }

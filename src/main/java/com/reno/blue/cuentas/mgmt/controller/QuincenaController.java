@@ -11,45 +11,45 @@ import com.reno.blue.cuentas.mgmt.model.Quincena;
 import com.reno.blue.cuentas.mgmt.service.QuincenaService;
 
 @Controller
-@RequestMapping(value = {"/quincena" })
+@RequestMapping(value = { "", "/quincena" })
 public class QuincenaController {
 
 	@Autowired
 	private QuincenaService quincenaService;
 
-	@RequestMapping(value = { "lista" })
+	@RequestMapping(value = { "/", "list" })
 	public String index(Model model) {
-		System.out.println(quincenaService.findAll());
 		model.addAttribute("quincenas", quincenaService.findAll());
 		return "quincena/index";
 	}
-
-//	@RequestMapping(value = "create")
+	
+	@RequestMapping(value = "create")
 	public String create() {
 		return "quincena/create";
 	}
 
-//	@RequestMapping(value = "save", method = RequestMethod.POST)
+	@RequestMapping(value = "save", method = RequestMethod.POST)
 	public String save(Quincena quincena) {
 		quincenaService.save(quincena);
-		return "redirect:index";
+		return "redirect:list";
 	}
 
-//	@RequestMapping(value = "edit/{id}")
+	@RequestMapping(value = "edit/{id}")
 	public String edit(@PathVariable Long id, Model model) {
 		model.addAttribute("quincena", quincenaService.findById(id));
 		return "quincena/edit";
 	}
 
-//	@RequestMapping(value = "update", method = RequestMethod.POST)
+	@RequestMapping(value = "update", method = RequestMethod.POST)
 	public String update(Quincena quincena) {
 		quincenaService.save(quincena);
-		return "redirect:index";
+		return "redirect:list";
 	}
-
-//	@RequestMapping(value = "/test")
-	public String test() {
-		return " hello world";
+	
+	@RequestMapping(value = "{id}")
+	public String delete(@PathVariable Long id, Model model) {
+		quincenaService.delete(id);
+		return "redirect:list";
 	}
 
 }

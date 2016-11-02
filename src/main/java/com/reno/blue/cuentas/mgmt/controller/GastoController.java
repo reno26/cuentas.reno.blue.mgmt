@@ -11,15 +11,14 @@ import com.reno.blue.cuentas.mgmt.model.Gasto;
 import com.reno.blue.cuentas.mgmt.service.GastoService;
 
 @Controller
-@RequestMapping(value = {"/gasto" })
+@RequestMapping(value = { "/gasto" })
 public class GastoController {
 
 	@Autowired
 	private GastoService gastoService;
 
-	@RequestMapping(value = { "lista" })
+	@RequestMapping(value = { "/", "list" })
 	public String index(Model model) {
-		System.out.println(gastoService.findAll());
 		model.addAttribute("gastos", gastoService.findAll());
 		return "gasto/index";
 	}
@@ -32,7 +31,7 @@ public class GastoController {
 	@RequestMapping(value = "save", method = RequestMethod.POST)
 	public String save(Gasto gasto) {
 		gastoService.save(gasto);
-		return "redirect:lista";
+		return "redirect:list";
 	}
 
 	@RequestMapping(value = "edit/{id}")
@@ -44,12 +43,13 @@ public class GastoController {
 	@RequestMapping(value = "update", method = RequestMethod.POST)
 	public String update(Gasto gasto) {
 		gastoService.save(gasto);
-		return "redirect:lista";
+		return "redirect:list";
 	}
 
-//	@RequestMapping(value = "/test")
-//	public String test() {
-//		return " hello world";
-//	}
+	@RequestMapping(value = "{id}")
+	public String delete(@PathVariable Long id, Model model) {
+		gastoService.delete(id);
+		return "redirect:list";
+	}
 
 }

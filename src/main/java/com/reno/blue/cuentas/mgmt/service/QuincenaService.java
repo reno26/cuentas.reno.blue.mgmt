@@ -23,5 +23,9 @@ public class QuincenaService {
 	public Quincena save(Quincena quincena) {
 		return quincenaRepository.save(quincena);
 	}
+	
+	public void delete(Long id) {
+		quincenaRepository.delete(id);		
+	}
 
 }
